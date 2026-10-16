@@ -3,8 +3,8 @@ int main() {
     int choice= -1;
     int staff_choice;
     int cust_choice;
-    int pc1_status=0, pc2_status=0, pc3_status=0, pc4_status=0;
-    int pc_choice;
+    int pc_status[10] = {0,0,0,0,0,0,0,0,0,0};   
+    int pc_choice[10];
 
     while(choice != 0) { 
 
@@ -33,77 +33,29 @@ int main() {
         {
             case 1:
             // Check the availability of PC
-            if (pc1_status == 0) {
-                printf("PC 1: Free\n");
-            }
-            else {
-                printf("PC 1: Busy\n");
-            }
-            if (pc2_status == 0) {
-                printf("PC 2: Free\n");
-            }
-            else {
-                printf("PC 2: Busy\n");
-            }
-            
-            if (pc3_status == 0) {
-                printf("PC 3: Free\n");
-            }
-            else {
-                printf("PC 3: Busy\n");
-            }
-            if (pc4_status == 0) {
-                printf("PC 4: Free\n");
-            }
-            else {
-                printf("PC 4: Busy\n");
+            for (int i =0; i < 10; i++) {
+                if (pc_status[i] == 0) {
+                    printf("PC %d: Free\n", i+1);
+                }
+                else {
+                    printf("PC %d: Busy\n", i+1);
+                }
             }
             break;
 
             case 2:
             // assign a PC
-            printf("Enter the PC number to assign(1 to 4): ");
+            printf("Enter the PC number to assign(1 to 10): ");
             scanf("%d", &pc_choice);
-             if (pc_choice == 1) {
-                if (pc1_status == 0) {
-                    printf("PC successfully assigned\n");
-                    pc1_status = 1;
-                }
-                else {
-                    printf("PC 1 already booked!!!\n");
-                }
-             }
-             else if (pc_choice == 2) {
-                if (pc2_status == 0) {
-                    printf("PC successfully assigned\n");
-                    pc2_status = 1;
-                }
-                else {
-                    printf("PC 2 already booked!!!\n");
-                }
-             }
-             else if (pc_choice == 3) {
-                if (pc3_status == 0) {
-                    printf("PC successfully assigned\n");
-                    pc3_status = 1;
-                }
-                else {
-                    printf("PC 3 already booked!!!\n");
-                }
-             }
-             else if (pc_choice == 4) {
-                if (pc4_status == 0) {
-                    printf("PC successfully assigned\n");
-                    pc4_status = 1;
-                }
-                else {
-                    printf("PC 4 already booked!!!\n");
-                }
-             }
-             else {
-                printf("Invalid PC number!! Please Choose from 1 to 4.\n");
-             }
-             break;
+            
+            if (pc_status[pc_choice[10] -1] == 0) {
+                printf("PC %d is assigned successfully\n", pc_choice -1);
+                pc_status[pc_choice[10] -1] =1;
+            }
+            else {
+                printf("PC %d is already booked\n", pc_choice -1);
+            }
+            break;
 
         }
         break;
@@ -118,77 +70,29 @@ int main() {
         switch (cust_choice) {
             case 1:
             // View available PCs
-            if (pc1_status == 0) {
-                printf("PC 1: Free\n");
+            for (int i =0; i < 10; i++) {
+                if (pc_status[i] == 0) {
+                    printf("PC %d: Free", i+1);
+                }
+                else {
+                    printf("PC %d: Busy", i+1);
+                }
             }
-            else {
-                printf("PC 1: Busy\n");
-            }
-            if (pc2_status == 0) {
-                printf("PC 2: Free\n");
-            }
-            else {
-                printf("PC 2: Busy\n");
-            }
-            
-            if (pc3_status == 0) {
-                printf("PC 3: Free\n");
-            }
-            else {
-                printf("PC 3: Busy\n");
-            }
-            if (pc4_status == 0) {
-                printf("PC 4: Free\n");
-            } 
-            else {
-                printf("PC 4: Busy\n");
-            }
+
             break;
 
             case 2:
             // Book a PC
-            printf("Enter the PC number to book(1 to 4): ");
+            printf("Enter the PC number to book(1 to 10): ");
             scanf("%d", &pc_choice);
-             if (pc_choice == 1) {
-                if (pc1_status == 0) {
-                    printf("PC successfully assigned\n");
-                    pc1_status = 1;
-                }
-                else {
-                    printf("PC 1 already booked!!!\n");
-                }
-             }
-             else if (pc_choice == 2) {
-                if (pc2_status == 0) {
-                    printf("PC successfully assigned\n");
-                    pc2_status = 1;
-                }
-                else {
-                    printf("PC 2 already booked!!!\n");
-                }
-             }
-             else if (pc_choice == 3) {
-                if (pc3_status == 0) {
-                    printf("PC successfully assigned\n");
-                    pc3_status = 1;
-                }
-                else {
-                    printf("PC 3 already booked!!!\n");
-                }
-             }
-             else if (pc_choice == 4) {
-                if (pc4_status == 0) {
-                    printf("PC successfully assigned\n");
-                    pc4_status = 1;
-                }
-                else {
-                    printf("PC 4 already booked!!!\n");
-                }
-             }
-             else {
-                printf("Invalid PC number!! Please Choose from 1 to 4.\n");
-             }
-             break;
+            if (pc_status[pc_choice[10] -1] == 0) {
+                printf("PC %d is assigned successfully\n", pc_choice -1);
+                pc_status[pc_choice[10] -1] =1;
+            }
+            else {
+                printf("PC %d is already booked\n", pc_choice -1);
+            }    
+            break;
         }
         break;
 
