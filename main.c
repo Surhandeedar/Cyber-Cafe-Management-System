@@ -1,10 +1,10 @@
 #include <stdio.h>
+#include "pc_management.h"
+
 int main() {
     int choice= -1;
     int staff_choice;
     int cust_choice;
-    int pc_status[10] = {0,0,0,0,0,0,0,0,0,0};   
-    int pc_choice[10];
 
     while(choice != 0) { 
 
@@ -15,7 +15,6 @@ int main() {
 
     switch (choice) 
     {
-
     case 0:
         // Exit
         printf("Thank you for using the system!\n");
@@ -33,30 +32,13 @@ int main() {
         {
             case 1:
             // Check the availability of PC
-            for (int i =0; i < 10; i++) {
-                if (pc_status[i] == 0) {
-                    printf("PC %d: Free\n", i+1);
-                }
-                else {
-                    printf("PC %d: Busy\n", i+1);
-                }
-            }
+            displayPCAvailability();
             break;
 
             case 2:
             // assign a PC
-            printf("Enter the PC number to assign(1 to 10): ");
-            scanf("%d", &pc_choice);
-            
-            if (pc_status[pc_choice[10] -1] == 0) {
-                printf("PC %d is assigned successfully\n", pc_choice -1);
-                pc_status[pc_choice[10] -1] =1;
-            }
-            else {
-                printf("PC %d is already booked\n", pc_choice -1);
-            }
+            assignPC();
             break;
-
         }
         break;
     
@@ -70,33 +52,15 @@ int main() {
         switch (cust_choice) {
             case 1:
             // View available PCs
-            for (int i =0; i < 10; i++) {
-                if (pc_status[i] == 0) {
-                    printf("PC %d: Free", i+1);
-                }
-                else {
-                    printf("PC %d: Busy", i+1);
-                }
-            }
-
+            displayPCAvailability();
             break;
 
             case 2:
             // Book a PC
-            printf("Enter the PC number to book(1 to 10): ");
-            scanf("%d", &pc_choice);
-            if (pc_status[pc_choice[10] -1] == 0) {
-                printf("PC %d is assigned successfully\n", pc_choice -1);
-                pc_status[pc_choice[10] -1] =1;
-            }
-            else {
-                printf("PC %d is already booked\n", pc_choice -1);
-            }    
+            bookPC();
             break;
         }
         break;
-
-    
     }
     }
     return 0;
