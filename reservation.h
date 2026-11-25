@@ -1,11 +1,8 @@
+/* reservation.h - Reservations with real time-based expiry (time.h) and the 15-minute grace period. */
 #ifndef RESERVATION_H
 #define RESERVATION_H
 
-#include "Types.h"
-
-const char *resStatusName(int s);
-int findPendingReservationByCustomer(const Cafe *c, int customerId);
-int findPendingReservationByPc(const Cafe *c, int pcId);
+#include "config.h"
 
 void expireReservations(Cafe *c);
 void createReservation(Cafe *c);
