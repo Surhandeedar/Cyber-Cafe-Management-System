@@ -1,0 +1,83 @@
+# CYBER CAFE RECORDS FILE - written automatically by the program.
+
+[COUNTERS]
+# nextQueueNo|nextCustomerId|nextSnackId|clockOffsetSeconds
+1|1003|25|0
+
+[PCS]
+# id|category(1=standard,2=vip)|status(0=free,1=occupied,2=reserved)|customerId
+1|1|0|0
+2|1|0|0
+3|1|0|0
+4|1|0|0
+5|1|0|0
+6|1|2|1001
+7|1|0|0
+8|1|0|0
+9|1|0|0
+10|1|0|0
+11|1|0|0
+12|1|0|0
+13|1|0|0
+14|1|0|0
+15|1|0|0
+16|1|0|0
+17|1|0|0
+18|1|0|0
+19|1|0|0
+20|1|0|0
+101|2|0|0
+102|2|0|0
+103|2|1|1002
+104|2|0|0
+105|2|0|0
+
+[CUSTOMERS]
+# id|name|phone|type(1=individual,2=squad)|squadSize|pcId|inSession|startTime|plannedMin|lastDurationMin|sessionCount|start(readable)
+1001|Surhan|03248539221|1|1|0|0|0|0|0|0|-
+1002|Deedar|033323482599|1|1|103|1|1795613748|5|0|0|2026-11-25 18:35
+
+[RESERVATIONS]
+# id|customerId|pcId|category|createdAt|scheduledAt|status(0=pending,1=completed,2=cancelled,3=expired)|scheduled(readable)
+1|1001|6|1|1795613801|1795613921|0|2026-11-25 18:38
+
+[WAITINGLIST]
+# queueNo|customerId|category|joinedAt|joined(readable)
+
+[SNACKS]
+# id|name|price|stockQuantity|lowStockThreshold
+1|Respawn Fries|550.00|30|5
+2|AFK Fries|300.00|30|5
+3|Frag Nuggets|450.00|30|5
+4|GG Nachos|450.00|30|5
+5|Combo Breaker Wings|550.00|30|5
+6|Boss Level Popcorn|200.00|30|5
+7|The Headshot Slider|350.00|30|5
+8|Speedrun Noodles|300.00|30|5
+9|Hp Boost Rice Bowl|480.00|30|5
+10|Loot Box Cookie|180.00|30|5
+11|Glitch-Free Brownie|250.00|30|5
+12|Co-Op Pastry|350.00|30|5
+13|Keyboard Clean Nuts|300.00|30|5
+14|Pixel Pretzel Bites|220.00|30|5
+15|Stamina Bar|200.00|30|5
+16|Ping Booster|480.00|30|5
+17|Dev Mode Black|350.00|30|5
+18|Karak Stream Chai|150.00|30|5
+19|Rage Quit Energy|150.00|30|5
+20|Overclocked Overdrive|750.00|30|5
+21|Mana Potion Shake|450.00|30|5
+22|Liquid Cooling Iced Tea|320.00|30|5
+23|NPC Soda|130.00|30|5
+24|Base Hydration|80.00|30|5
+
+[ORDERS]
+# orderId|customerId|snackId|snackName|qty|unitPrice|lineTotal|orderedAt|billed(0/1)|ordered(readable)
+
+[BILLS]
+# id|customerId|name|pcId|category|start|end|minutes|peakMinutes|gamingCharge|snackCharge|discountPct|discountAmount|grandTotal|payMethod|start(readable)|end(readable)
+
+[PAYMENTS]
+# id|billId|customerId|method(1=cash,2=card,3=mobile)|amount|paidAt|paid(readable)
+
+[END]
